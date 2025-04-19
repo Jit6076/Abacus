@@ -1,0 +1,177 @@
+<div class="container">
+    <h2 style="text-align: center;">Add Trainer</h2>
+    <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="firstName" >First Name</label>
+                <input id="firstName" formControlName="firstName" type="text" class="form-control"
+                    placeholder="First Name" />
+                <div
+                    *ngIf="userForm.get('firstName')?.invalid && (userForm.get('firstName')?.dirty || userForm.get('firstName')?.touched)">
+                    <div *ngIf="userForm.get('firstName')?.errors?.['required']" style="color: red;">
+                        <small>First Name is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="middleName">Middle Name</label>
+                <input id="middleName" formControlName="middleName" type="text" class="form-control"
+                    placeholder="Middle Name" />
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="lastName">Last Name</label>
+                <input id="lastName" formControlName="lastName" type="text" class="form-control"
+                    placeholder="Last Name" />
+                <div
+                    *ngIf="userForm.get('lastName')?.invalid && (userForm.get('lastName')?.dirty || userForm.get('lastName')?.touched)">
+                    <div *ngIf="userForm.get('lastName')?.errors?.['required']" style="color: red;">
+                        <small>Last Name is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="userName">User Name</label>
+                <input id="userName" formControlName="userName" type="text" class="form-control"
+                    placeholder="User Name" />
+                <div
+                    *ngIf="userForm.get('userName')?.invalid && (userForm.get('userName')?.dirty || userForm.get('userName')?.touched)">
+                    <div *ngIf="userForm.get('userName')?.errors?.['required']" style="color: red;">
+                        <small>User Name is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="password">Password</label>
+                <input id="password" formControlName="password" type="password" class="form-control"
+                    placeholder="Password" />
+                <div
+                    *ngIf="userForm.get('password')?.invalid && (userForm.get('password')?.dirty || userForm.get('password')?.touched)">
+                    <div *ngIf="userForm.get('password')?.errors?.['required']" style="color: red;">
+                        <small>Password is required.</small>
+                    </div>
+                    <div *ngIf="userForm.get('password')?.errors?.['minlength']" style="color: red;">
+                        <small>Password should be atleast of 6 characters.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="email">Email</label>
+                <input id="email" formControlName="email" type="text" class="form-control" placeholder="abc@xyz.com" />
+                <div
+                    *ngIf="userForm.get('email')?.invalid && (userForm.get('email')?.dirty || userForm.get('email')?.touched)">
+                    <div *ngIf="userForm.get('email')?.errors?.['required']" style="color: red;">
+                        <small>Email is required.</small>
+                    </div>
+                    <div *ngIf="userForm.get('email')?.errors?.['email']" style="color: red;">
+                        <small>Email pattern doesnot match.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="phoneNumber">Phone Number</label>
+                <input id="phoneNumber" formControlName="phoneNumber" type="text" class="form-control"
+                    placeholder="Phone Number" />
+                <div
+                    *ngIf="userForm.get('phoneNumber')?.invalid && (userForm.get('phoneNumber')?.dirty || userForm.get('phoneNumber')?.touched)">
+                    <div *ngIf="userForm.get('phoneNumber')?.errors?.['required']" style="color: red;">
+                        <small>Phone Number is required.</small>
+                    </div>
+                    <div *ngIf="userForm.get('phoneNumber')?.errors?.['pattern']" style="color: red;">
+                        <small>Phone Number should should start with 91.</small>
+                    </div>
+                    <div *ngIf="userForm.get('phoneNumber')?.errors?.['minlength']" style="color: red;">
+                        <small>Phone Number should be of 10 digits.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="parentPhoneNumber">Parent Phone Number</label>
+                <input id="parentPhoneNumber" formControlName="parentPhoneNumber" type="text" class="form-control"
+                    placeholder="Parent Phone Number" />
+                <div
+                    *ngIf="userForm.get('parentPhoneNumber')?.invalid && (userForm.get('parentPhoneNumber')?.dirty || userForm.get('parentPhoneNumber')?.touched)">
+                    <div *ngIf="userForm.get('parentPhoneNumber')?.errors?.['required']" style="color: red;">
+                        <small>Parent Phone Number is required.</small>
+                    </div>
+                    <div *ngIf="userForm.get('parentPhoneNumber')?.errors?.['pattern']" style="color: red;">
+                        <small>Parent Phone Number should should start with 91.</small>
+                    </div>
+                    <div *ngIf="userForm.get('parentPhoneNumber')?.errors?.['minlength']" style="color: red;">
+                        <small>Parent Phone Number should be of 10 digits.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="address">Address</label>
+                <input id="address" formControlName="address" type="text" class="form-control" placeholder="Address" />
+                <div
+                    *ngIf="userForm.get('address')?.invalid && (userForm.get('address')?.dirty || userForm.get('address')?.touched)">
+                    <div *ngIf="userForm.get('address')?.errors?.['required']" style="color: red;">
+                        <small>Address is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="city">City</label>
+                <input id="city" formControlName="city" type="text" class="form-control" placeholder="City" />
+                <div
+                    *ngIf="userForm.get('city')?.invalid && (userForm.get('city')?.dirty || userForm.get('city')?.touched)">
+                    <div *ngIf="userForm.get('city')?.errors?.['required']" style="color: red;">
+                        <small>City is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="state">State</label>
+                <input id="state" formControlName="state" type="text" class="form-control" placeholder="State" />
+                <div
+                    *ngIf="userForm.get('state')?.invalid && (userForm.get('state')?.dirty || userForm.get('state')?.touched)">
+                    <div *ngIf="userForm.get('state')?.errors?.['required']" style="color: red;">
+                        <small>State is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="zipCode">Zip Code</label>
+                <input id="zipCode" formControlName="zipCode" type="text" class="form-control" placeholder="Zip Code" />
+                <div
+                    *ngIf="userForm.get('zipCode')?.invalid && (userForm.get('zipCode')?.dirty || userForm.get('zipCode')?.touched)">
+                    <div *ngIf="userForm.get('zipCode')?.errors?.['required']" style="color: red;">
+                        <small>Zip Code is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="country">Country</label>
+                <input id="country" formControlName="country" type="text" class="form-control" placeholder="Country" />
+                <div
+                    *ngIf="userForm.get('country')?.invalid && (userForm.get('country')?.dirty || userForm.get('country')?.touched)">
+                    <div *ngIf="userForm.get('country')?.errors?.['required']" style="color: red;">
+                        <small>Country is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <label for="role">Role</label>
+                <select id="role" formControlName="role" class="form-control" placeholder=" Select Role">
+                    <option value="" disabled selected>Select Role</option>
+                    <!-- <option value="admin">Admin</option> -->
+                    <option value="trainer">Trainer</option>
+                    <!-- <option value="student">Student</option> -->
+                </select>
+                <div
+                    *ngIf="userForm.get('role')?.invalid && (userForm.get('role')?.dirty || userForm.get('role')?.touched)">
+                    <div *ngIf="userForm.get('role')?.errors?.['required']" style="color: red;">
+                        <small>Role is required.</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12 col-lg-6 col-sm-12 col-xs-12 pt-2">
+                <mat-checkbox id="isActive" class="example-margin" formControlName="isActive">Is Active</mat-checkbox>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="float: right;" [disabled]="userForm.invalid">
+            Submit
+        </button>
+    </form>
+</div>

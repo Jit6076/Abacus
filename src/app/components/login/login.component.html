@@ -1,0 +1,77 @@
+<div class="header">
+
+    <div class="logo-left">
+        <div class="logo-left">
+            <button class="toggle-button" (click)="toggleNav()">☰</button>
+        </div>
+    </div>
+    <div class="logo-right" style="margin-right: 6%;">ABACUS GYAN ACADEMY</div>
+</div>
+<div class="sidebar" id="mySidebar">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()" style="float: right;">&times;</a>
+    <br>
+    <br>
+    <a (click)="loginType('Student Login')" style="color: rgb(255 0 0);">Student Login</a>
+    <a (click)="loginType('Trainer Login')" style="color: rgba(255, 255, 0, 0.932);">Trainer Login</a>
+    <a (click)="loginType('Admin Login')">Admin Login</a>
+</div>
+<div class="main-content content" id="mainContent" >
+    <div class="login-container">
+        <div class="logo">
+            <img src="graduation.png" alt="Abacus Logo">
+        </div>
+        <h2>{{loginTypeName}} (Abacus)</h2>
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="form-group1">
+                <label for="username">User Name</label>
+                <input type="text" id="username" formControlName="username" required>
+                <div
+                    *ngIf="loginForm.get('username')?.invalid && (loginForm.get('username')?.dirty || loginForm.get('username')?.touched)">
+                    <div *ngIf="loginForm.get('username')?.errors?.['required']" style="color: red;">
+                        User Name is required.
+                    </div>
+                </div>
+            </div>
+            <div class="forgot-links" style="margin-bottom: 10px;">
+                <a href="#" [class.disabled]="loginForm.disabled" (click)="loginForm.disabled ? $event.preventDefault() : null">Forgot Username?</a>
+            </div>
+            <div class="form-group2">
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" required>
+                <div
+                    *ngIf="loginForm.get('password')?.invalid && (loginForm.get('password')?.dirty || loginForm.get('password')?.touched)">
+                    <div *ngIf="loginForm.get('password')?.errors?.['required']" style="color: red;">
+                        Password is required.
+                    </div>
+                </div>
+            </div>
+            <div class="forgot-links">
+                <label>
+                    <input type="checkbox" (change)="togglePasswordVisibility()"> Show Password
+                </label>
+                <a href="#" [class.disabled]="loginForm.disabled" (click)="loginForm.disabled ? $event.preventDefault() : null">ForgotPassword?</a> | <a href="#" [class.disabled]="loginForm.disabled" (click)="loginForm.disabled ? $event.preventDefault() : null">Reset Password</a>
+            </div>
+            <p class="terms-privacy">
+                By signing in here, I agree to the <a href="#" [class.disabled]="loginForm.disabled" (click)="loginForm.disabled ? $event.preventDefault() : null">Privacy Policy</a> and <a href="#"
+                [class.disabled]="loginForm.disabled" (click)="loginForm.disabled ? $event.preventDefault() : null">Terms &amp;
+                    Conditions</a> of Roots Abacus Learning School.
+            </p>
+            <div class="checkbox-group">
+                <input type="checkbox" id="rememberMe" formControlName="rememberMe">
+                <label for="rememberMe">Remember Me</label>
+            </div>
+            <button type="submit" [disabled]="loginForm.invalid||loginForm.disabled">Submit</button>
+        </form>
+    </div>
+</div>
+
+<div class="footer">
+    <a href="#" target="_blank">
+        <img src="facebook.png" alt="Follow us on Facebook" style="height: 30px;
+      vertical-align: middle;
+      margin-right: 5px;
+      width: 90px;
+      border-radius: 3px;">
+    </a>
+    <p>© 2025 Abacus Gyan Academy</p>
+</div>

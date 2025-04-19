@@ -1,0 +1,206 @@
+ <!-- <nav>
+    <div class="row" style="width: 20%;">
+    <div class="col-md-3 bg-dark text-white p-4 align-items-start">
+      <h2 class="" style="text-align: center;margin-bottom: 0px;padding: 10px;font-weight: 500;">Hi, Yaksh!</h2>
+      <ul class="nav flex-column w-100" style="padding-left: 0px;margin-top: 0px;height: 730px;">
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link active" href="#">
+            <mat-icon>home</mat-icon> Dashboard
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>class</mat-icon> Classwork
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>assignment</mat-icon> Homework
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>timeline</mat-icon> My Activities
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>emoji_events</mat-icon> My Achievements
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>shopping_cart</mat-icon> Shop
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>shield</mat-icon> Badges
+          </a>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <div class="learning-tools-dropdown w-100">
+            <button class="btn btn-link text-white w-100 d-flex justify-content-between align-items-center"
+              (click)="toggleLearningTools()">
+              <div class="d-flex align-items-center">
+                <mat-icon>lightbulb_outline</mat-icon> Learning Tools
+              </div>
+              <mat-icon class="dropdown-arrow" [class.open]="isLearningToolsOpen">expand_more</mat-icon>
+            </button>
+            <ul class="list-unstyled bg-secondary rounded mt-1" *ngIf="isLearningToolsOpen">
+              <li><a class="nav-link text-white" href="#">Tool 1</a></li>
+              <li><a class="nav-link text-white" href="#">Tool 2</a></li>
+              <li><a class="nav-link text-white" href="#">Tool 3</a></li>
+            </ul>
+          </div>
+        </ol>
+        <ol class="nav-item" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>grading</mat-icon> Level Test
+          </a>
+        </ol>
+        <ol class="nav-item mt-auto" style="padding:10px">
+          <a class="nav-link" href="#">
+            <mat-icon>logout</mat-icon> Logout
+          </a>
+        </ol>
+      </ul>
+    </div>
+  </div>
+  </nav> -->
+  <div #fullscreenElement style="border: 1px solid black; height: 100%;">
+  <mat-sidenav-container >
+    <mat-sidenav [opened]="openCloseNav()" [mode]="navigationMode()" position="start" #sideNavBar class="bg-dark">
+      <div class="row">
+        <div class="col-md-12 bg-dark  align-items-start">
+          <h2 class="text-white" style="margin-bottom: 0px;padding: 10px;font-weight: 500;">Hi, Yaksh!</h2>
+          <ul class="nav flex-column w-100" style="padding-left: 20px;margin-top: 0px;">
+            <ol class="nav-item" style="padding:10px;" routerLink="/dashboard">
+              <a class="nav-link active"  style="text-decoration: none;">
+                <mat-icon>home</mat-icon> Dashboard
+              </a>
+            </ol>
+            <ol class="nav-item" style="padding:10px;" routerLink="/studentClassWork">
+              <a class="nav-link"  style="text-decoration: none;">
+                <mat-icon>class</mat-icon> Classwork
+              </a>
+            </ol>
+            <ol class="nav-item" style="padding:10px">
+              <a class="nav-link"  style="text-decoration: none;" routerLink="/studentHomeWork">
+                <mat-icon>assignment</mat-icon> Homework
+              </a>
+            </ol>
+            <ol class="nav-item" style="padding:10px;">
+              <a class="nav-link"  style="text-decoration: none;" routerLink="/studentActivities">
+                <mat-icon>timeline</mat-icon> My Activities
+              </a>
+            </ol>
+            <ol class="nav-item" style="padding:10px;">
+              <a class="nav-link"  style="text-decoration: none;" routerLink="/studentAchievements">
+                <mat-icon>emoji_events</mat-icon> My Achievements
+              </a>
+            </ol>
+            <!-- <ol class="nav-item" style="padding:10px">
+              <a class="nav-link" href="#">
+                <mat-icon>shopping_cart</mat-icon> Shop
+              </a>
+            </ol> -->
+            <!-- <ol class="nav-item" style="padding:10px">
+              <a class="nav-link" href="#">
+                <mat-icon>shield</mat-icon> Badges
+              </a>
+            </ol> -->
+            <ol class="nav-item4" style="padding:10px;">
+              <div class="">
+                <button class="nav-link d-flex" mat-icon-button
+                  (click)="toggleLearningTools()">
+                  <div class="">
+                    <mat-icon>lightbulb_outline</mat-icon> Learning Tools
+                  </div>
+                  <mat-icon class="dropdown-arrow" style="    padding-top: 5px;
+                  padding-left: 15px;
+                  width: 35px;" *ngIf="isLearningToolsOpen">expand_less</mat-icon>
+                  <mat-icon class="dropdown-arrow" style="    padding-top: 5px;
+                  padding-left: 15px;
+                  width: 35px;" *ngIf="!isLearningToolsOpen">expand_more</mat-icon>
+                </button>
+                <ul class="list-unstyled rounded mt-1" *ngIf="isLearningToolsOpen" style="background-color: whitesmoke;">
+                  <li><a class="nav-link nav-item1" style="text-align: center;">Tool 1</a></li>
+                  <li><a class="nav-link nav-item2" style="text-align: center;">Tool 2</a></li>
+                  <li><a class="nav-link nav-item3" style="text-align: center;">Tool 3</a></li>
+                </ul>
+              </div>
+            </ol>
+            <ol class="nav-item" style="padding:10px;">
+              <a class="nav-link"  style="text-decoration: none;" routerLink="/studentShop">
+                <mat-icon>shopping_cart</mat-icon> Shop
+              </a>
+            </ol>
+            <ol class="nav-item" style="padding:10px;">
+              <a class="nav-link" style="text-decoration: none;" routerLink="/studentLevelTest">
+                <mat-icon>grading</mat-icon> Level Test
+              </a>
+            </ol>
+            <ol class="nav-item mt-auto" style="padding:10px;">
+              <a class="nav-link" style="text-decoration: none;" routerLink="/login">
+                <mat-icon>logout</mat-icon> Logout
+              </a>
+            </ol>
+          </ul>
+        </div>
+      </div>
+    </mat-sidenav>
+    
+    <mat-sidenav-content>
+      <div style="position: fixed;
+      z-index: 100;
+      width: 75%;">
+        <div style="width: fit-content;
+    float: inline-start;display: flex;">
+        <button mat-icon-button *ngIf="openCloseNav() == false" (click)="sideNavBar.toggle()" style="margin-right: 5%;
+        background-color: inherit;
+        height: 50px;
+        width: 50px;
+        border: 0px;" >
+        <mat-icon style="display: block;background-color: whitesmoke;
+    color: black;">menu</mat-icon>
+      </button>
+        <button (click)="toggleFullscreen()" mat-icon-button style="border-radius: 25px;
+        background-color: inherit;
+        border: 0px;height: 50px;
+        width: 50px;">
+        <mat-icon  *ngIf="this.isFullscreen == false" style="display: block;background-color: whitesmoke;
+    color: black;">fullscreen</mat-icon>
+        <mat-icon  *ngIf="this.isFullscreen == true" style="display: block;background-color: whitesmoke;
+    color: black;">fullscreen_exit</mat-icon>
+        </button>
+      </div>
+        <div style="width: fit-content;
+    float: inline-end;display: flex;">
+          <button mat-icon-button style="border: 0px;
+        height: 50px;
+        width: 50px;
+        border-radius: 25px; background-color: inherit;" >
+        <mat-icon style="display: block;">info</mat-icon>
+      </button>
+      <button style="border: 0px;
+      height: 50px;
+      width: 50px;
+      border-radius: 25px;" >
+        <img src="Level1Img.jpg" alt="Student Image" style="height: 50px;
+        width: 50px;
+        border-radius: 25px;">
+      </button>
+        </div>
+      </div>
+      
+        <ng-content>
+          <div style="padding-top:15px">
+            <router-outlet></router-outlet>
+          </div>
+        </ng-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+  

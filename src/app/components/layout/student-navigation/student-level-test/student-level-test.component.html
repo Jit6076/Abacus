@@ -1,0 +1,49 @@
+<div>
+    <h3 style="text-align: center;">Level Test</h3>
+    <h6 style="text-align: center;">(Only for New Admissions)</h6>
+</div>
+<br>
+<br>
+<br>
+<div class="row">
+<small class="col-md-12 col-sm-12 col-lg-12 mb-3" style="text-align: center;">
+    Click Start to begin the Level Test. Numbers will appear one after another with the specified flashing interval. Enter your answer when prompted.
+</small>
+</div>
+
+<table mat-table [dataSource]="dataSource" 
+       class="mat-elevation-z8">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>
+      Level
+    </th>
+    <td mat-cell *matCellDef="let element" style="border: groove;"> 
+        <button mat-raised-button color="primary" (click)="startLevelTest(element.level)">
+            Start
+        </button>
+        {{element.name}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="totalQue">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by topic">
+      Total Que.
+    </th>
+    <td mat-cell *matCellDef="let element" style="border: groove;"> {{element.totalQue}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="flashingInterval">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header sortActionDescription="Sort by stage">
+      Flashing Gap(Sec.)
+    </th>
+    <td mat-cell *matCellDef="let element" style="border: groove;"> {{element.flashingInterval}} 
+        <small style="font-size: 9px;"> Second/s</small> </td>
+  </ng-container>
+
+
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
