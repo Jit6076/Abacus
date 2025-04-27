@@ -1,0 +1,201 @@
+<div id="wrapper">
+  <div class="overlay"></div>
+  <!-- Sidebar -->
+  
+
+  <!-- Page Content -->
+  <div id="page-content-wrapper">
+    <div class="container">
+      <div style="margin-top:10px;">
+        <h3>Hi, Trainer!</h3>
+
+        <div class="notification-bell">
+          <a href="/abacus_training/notifications.php">
+            <i class="bell-icon">🔔</i>
+            <span class="notification-count">56</span>
+          </a>
+        </div>
+
+        <div style="background-color: #ffcccc; padding: 15px; border: 1px solid #ff9999; border-radius: 5px; text-align: left; width: fit-content;">
+          <div style="text-align: center;"><h3><strong>Mandatory Completion of New Software Training</strong></h3></div>
+          <p>Dear Trainers,</p>
+          <p>
+            All trainers must complete the new software training and transfer all students by <strong>31st May 2025</strong>.
+            After this date, the old software will be discontinued, and no support for it will be provided.
+          </p>
+          <p>Complete the training promptly to avoid work disruptions.</p>
+          <p><strong>Team Roots</strong></p>
+        </div>
+
+        <div style="margin: 15px 0; display: flex; flex-direction: column; align-items: center; gap: 10px;">
+          <button style="padding: 10px 20px; width: 200px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Syllabus</button>
+          <button style="padding: 10px 20px; width: 200px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">Start/Continue Training</button>
+          <div style="display: flex; flex-direction: column; align-items: center;">
+            <div style="width: 100px; height: 100px; position: relative;">
+              <svg viewBox="0 0 36 36" style="transform: rotate(-90deg);">
+                <circle cx="18" cy="18" r="15.91549431" fill="none" stroke="#e9ecef" stroke-width="3"></circle>
+                <circle cx="18" cy="18" r="15.91549431" fill="none" stroke="#007bff" stroke-width="3" stroke-dasharray="67, 100" stroke-dashoffset="0"></circle>
+              </svg>
+              <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+                <strong>67%</strong>
+                <p style="margin: 0; font-size: 12px;">Completed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="container">
+          <div style="margin-top:30px;">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-12 text-center mb-4">
+                  <h2 class="main-heading">Training Dashboard</h2>
+                </div>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <!-- Course Progress -->
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th colspan="2">Course Progress</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of courseProgress">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Students Strength -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Students Strength</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of studentStrength">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Level-wise students -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Level-wise students (Old Software)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of levelWiseStudents">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Students Inquiries -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Students Inquiries</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of studentInquiries">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Franchise Status -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Franchise Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of franchiseStatus">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Teaching Efficiency -->
+                <thead>
+                  <tr>
+                    <th colspan="2">My Teaching Efficiency</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of teachingEfficiency">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Weekly Progress -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Weekly Average Progress Rate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of weeklyProgress">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- RootsWallet -->
+                <thead>
+                  <tr>
+                    <th colspan="2">RootsWallet</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of rootsWallet">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                </tbody>
+
+                <!-- Other Info -->
+                <thead>
+                  <tr>
+                    <th colspan="2">Other Info and Links</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let item of otherInfo">
+                    <td>{{item.label}}</td>
+                    <td>{{item.value}}</td>
+                  </tr>
+                  <tr *ngFor="let item of links">
+                    <td>{{item.label}}</td>
+                    <td>
+                      <a href="{{item.value}}" target="_blank" *ngIf="item.value !== '#'">View</a>
+                      <a href="{{item.value}}" *ngIf="item.value === '#'">Click HERE to open</a>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Navigation Cards Grid -->
+            <div class="navigation-grid">
+              <div class="row">
+                <div *ngFor="let card of navigationCards" class="col-md-2 col-sm-4 col-6 mb-4">
+                  <div class="nav-card" [routerLink]="card.route">
+                    <mat-icon>{{card.icon}}</mat-icon>
+                    <div class="card-title">{{card.title}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

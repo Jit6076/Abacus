@@ -1,0 +1,273 @@
+<div id="wrapper">
+  <div class="overlay"></div>
+  <div id="page-content-wrapper">
+    <div class="container">
+      <div style="margin-top:30px;">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-12 text-center mb-4">
+              <h2 class="main-heading">Training Syllabus</h2>
+            </div>
+          </div>
+        </div>
+
+        <div *ngFor="let card of navigationCards" class="downloads-section mb-5" style="margin-left: 48px;;">
+          <h3 class="section-heading">Downloads</h3>
+          <p>
+            <a href="/Friends list.pdf" download class="fa fa-download">
+              <mat-icon>{{card.icon}}</mat-icon> 
+               Friends list
+            </a><br>
+            <a href="/Weekly Test of each students.pdf" download class="fa fa-download">
+              <mat-icon>{{card.icon}}</mat-icon>
+               Weekly Test of each student
+            </a><br>
+            <a href="/List-of-hurdles-and-their-solutions.pdf" download class="fa fa-download">
+              <mat-icon>{{card.icon}}</mat-icon>
+               List of obstacles/Hurdles and their Solutions/Combinations
+            </a><br>
+            <a href="syllabus-trainer.png" download class="fa fa-download">
+              <mat-icon>{{card.icon}}</mat-icon>
+               Syllabus: Trainer
+            </a>
+          </p>
+        </div>
+
+        <div class="syllabus-section">
+          <div class="container-fluid">
+            <mat-tab-group>
+              <mat-tab label="Trainer's Syllabus">
+                <h3 class="tab-heading">Trainer's Syllabus Content</h3>
+                <div class="table-container">
+                  <table class="table table-bordered table-sm compact-table">
+                    <thead class="table-light">
+                      <tr>
+                        <th>Level</th>
+                        <th>Topic</th>
+                        <th>Video No.</th>
+                        <th>Exercise No.</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr *ngFor="let element of syllabusData">
+                        <td>{{element.level}}</td>
+                        <td>{{element.topic}}</td>
+                        <td>{{element.videono}}</td>
+                        <td>{{element.exerciseNo}}</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </mat-tab>
+
+              <mat-tab label="Student's Syllabus">
+                <h3 class="tab-heading">Student's Syllabus Content</h3>
+                <div class="table-container mat-elevation-z8">
+                  <div class="table-header">
+                    <div class="entries-selector">
+                      <span>Show</span>
+                      <mat-form-field>
+                        <mat-select [(value)]="pageSize" (selectionChange)="onPageSizeChange($event)">
+                          <mat-option [value]="5">5</mat-option>
+                          <mat-option [value]="10">10</mat-option>
+                          <mat-option [value]="25">25</mat-option>
+                          <mat-option [value]="50">50</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <span>entries</span>
+                    </div>
+
+                    <mat-form-field class="search-field">
+                      <mat-label>Search</mat-label>
+                      <input matInput [(ngModel)]="searchText" (input)="onSearch($event)" placeholder="Search any field...">
+                    </mat-form-field>
+                  </div>
+
+                  <table mat-table [dataSource]="filteredStudentExercises" class="table table-bordered table-sm compact-table">
+                    <ng-container matColumnDef="exerciseNo">
+                      <th mat-header-cell *matHeaderCellDef>Exercise No.</th>
+                      <td mat-cell *matCellDef="let element">{{element.exerciseNo}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="level">
+                      <th mat-header-cell *matHeaderCellDef>Level</th>
+                      <td mat-cell *matCellDef="let element">{{element.level}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="topic">
+                      <th mat-header-cell *matHeaderCellDef>Topic</th>
+                      <td mat-cell *matCellDef="let element">{{element.topic}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="questionType">
+                      <th mat-header-cell *matHeaderCellDef>Question Type</th>
+                      <td mat-cell *matCellDef="let element">{{element.questionType}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="rows">
+                      <th mat-header-cell *matHeaderCellDef>Rows</th>
+                      <td mat-cell *matCellDef="let element">{{element.rows}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="correctSumsGoal">
+                      <th mat-header-cell *matHeaderCellDef>Correct Sums Goal</th>
+                      <td mat-cell *matCellDef="let element">{{element.correctSumsGoal}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="flashGap">
+                      <th mat-header-cell *matHeaderCellDef>Flash Gap (in Sec.)</th>
+                      <td mat-cell *matCellDef="let element">{{element.flashGap}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="studentDisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: studentDisplayedColumns;"></tr>
+                  </table>
+
+                  <div class="table-footer">
+                    <div class="range-info">
+                      Showing {{rangeStart}} to {{rangeEnd}} of {{totalEntries}} entries
+                    </div>
+                    <mat-paginator 
+                      [length]="totalEntries"
+                      [pageSize]="pageSize"
+                      [pageSizeOptions]="[5, 10, 25, 50]"
+                      (page)="onPageChange($event)"
+                      aria-label="Select page">
+                    </mat-paginator>
+                  </div>
+                </div>
+              </mat-tab>
+
+              <mat-tab label="New Student Syllabus">
+                <h3 class="tab-heading">New Student Syllabus Content</h3>
+                <div class="table-container mat-elevation-z8">
+                  <div class="table-header">
+                    <div class="entries-selector">
+                      <span>Show</span>
+                      <mat-form-field>
+                        <mat-select [(value)]="pageSize" (selectionChange)="onNewStudentPageSizeChange($event)">
+                          <mat-option [value]="5">5</mat-option>
+                          <mat-option [value]="10">10</mat-option>
+                          <mat-option [value]="25">25</mat-option>
+                          <mat-option [value]="50">50</mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                      <span>entries</span>
+                    </div>
+
+                    <mat-form-field class="search-field">
+                      <mat-label>Search</mat-label>
+                      <input matInput [(ngModel)]="newStudentSearchText" (input)="onNewStudentSearch($event)" placeholder="Search any field...">
+                    </mat-form-field>
+                  </div>
+
+                  <table mat-table [dataSource]="filteredNewStudentSyllabus" class="mat-elevation-z8">
+                    <ng-container matColumnDef="level">
+                      <th mat-header-cell *matHeaderCellDef>Level</th>
+                      <td mat-cell *matCellDef="let element">{{element.level}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="topicId">
+                      <th mat-header-cell *matHeaderCellDef>Topic ID</th>
+                      <td mat-cell *matCellDef="let element">{{element.topicId}}</td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="lessonName">
+                      <th mat-header-cell *matHeaderCellDef>Lesson Name</th>
+                      <td mat-cell *matCellDef="let element">{{element.lessonName}}</td>
+                    </ng-container>
+
+                    <tr mat-header-row *matHeaderRowDef="newStudentDisplayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: newStudentDisplayedColumns;"></tr>
+                  </table>
+
+                  <div class="table-footer">
+                    <div class="range-info">
+                      Showing {{newStudentRangeStart}} to {{newStudentRangeEnd}} of {{newStudentTotalEntries}} entries
+                    </div>
+                    <mat-paginator 
+                      [length]="newStudentTotalEntries"
+                      [pageSize]="pageSize"
+                      [pageSizeOptions]="[5, 10, 25, 50]"
+                      (page)="onNewStudentPageChange($event)"
+                      aria-label="Select page">
+                    </mat-paginator>
+                  </div>
+                </div>
+              </mat-tab>
+            </mat-tab-group>
+          </div>
+
+          <div class="friends-section mt-5">
+            <h2 class="section-heading">Little & Big Friends</h2>
+            <div class="friends-tables">
+              <!-- Little Friends Table -->
+              <div class="mb-4">
+                <h3 class="h4">Little Friends</h3>
+                <table class="table table-bordered table-sm compact-table">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Number</th>
+                      <th>Friend</th>
+                      <th>Makes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let friend of littleFriends">
+                      <td>{{friend.number}}</td>
+                      <td>{{friend.friend}}</td>
+                      <td>{{friend.makes}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Big Friends Table -->
+              <div>
+                <h3 class="h4">Big Friends</h3>
+                <table class="table table-bordered table-sm compact-table">
+                  <thead class="table-light">
+                    <tr>
+                      <th>Number</th>
+                      <th>Friend</th>
+                      <th>Makes</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngFor="let friend of bigFriends">
+                      <td>{{friend.number}}</td>
+                      <td>{{friend.friend}}</td>
+                      <td>{{friend.makes}}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+
+          <div class="combinations-section mt-5">
+            <h2 class="section-heading">List Combinations</h2>
+            <div class="combinations-table">
+              <table class="table table-bordered table-sm">
+                <thead class="table-light">
+                  <tr>
+                    <th>Question</th>
+                    <th>Combination</th>
+                    <th>Answer</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let combo of combinations">
+                    <td>{{combo.question}}</td>
+                    <td>{{combo.combination}}</td>
+                    <td>{{combo.answer}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

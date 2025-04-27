@@ -33,9 +33,12 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       console.log('Login Form Data:', this.loginForm.value);
-      if(this.loginForm.value.username=="Yaksh1" && this.loginForm.value.password=="12345"){
+      if (this.loginTypeName === 'Student Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
         this.router.navigate(['dashboard'], { replaceUrl: true });
-        //this.router.navigate(['adminDashboard'], { replaceUrl: true });
+        console.log('Student Login Successful');
+      } else if (this.loginTypeName === 'Trainer Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
+        this.router.navigate(['trainer/trainer-dashboard'], { replaceUrl: true });
+        console.log('Trainer Login Successful');
       }
       // Here you would typically send the form data to your authentication service
     } else {

@@ -1,0 +1,484 @@
+/* General styles for the trainer syllabus component */
+@use "sass:color";
+
+#wrapper {
+  padding-left: 0;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 220px;
+}
+
+#sidebar-wrapper {
+  z-index: 1000;
+  left: 220px;
+  width: 0;
+  height: 100%;
+  margin-left: -220px;
+  overflow-y: auto;
+  background: #1a1a1a;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 220px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.navbar {
+  background-color: #1a1a1a;
+  border: none;
+}
+
+.navbar .nav > li > a {
+  color: #ddd;
+  padding: 10px 15px;
+}
+
+.navbar .nav > li > a:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.table-responsive {
+  overflow-x: auto;
+}
+
+.nav-tabs {
+  margin-top: 20px;
+}
+
+.nav-tabs .nav-link {
+  color: #007bff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #007bff;
+  color: white;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  height: 52px;
+  right: 0;
+  width: 100%;
+  background-color: black;
+  z-index: 1;
+}
+
+.fixed h5 {
+  text-align: right;
+  margin-top: 15px;
+  padding-right: 15px;
+  color: white;
+}
+
+/* .container {
+  //margin-top: 30px;
+  //padding: 20px;
+} */
+
+.container h3 {
+  margin-bottom: 20px;
+}
+
+.fa-download {
+  margin-right: 10px;
+  color: #007bff;
+}
+
+.fa-download:hover {
+  color: #0056b3;
+}
+
+.tab-content {
+  margin-top: 20px;
+}
+
+.tab-content h3 {
+  margin-bottom: 15px;
+}
+
+.tab-content table {
+  margin-top: 10px;
+}
+
+.mat-elevation-z8 {
+  width: 100%;
+  margin: 20px 0;
+}
+
+.tab-heading {
+  font-size: 30px;
+  font-weight: 500;
+  color: #020304;
+  margin: 20px 0;
+  text-align: center;
+}
+
+// Style for the entire table
+table {
+  width: 100%;
+}
+
+// Header styles
+th.mat-header-cell {
+  background-color: #f5f5f5;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 500;
+  padding: 12px 8px;
+}
+
+// Cell styles
+td.mat-cell {
+  padding: 8px;
+}
+
+// Row hover effect
+tr.mat-row:hover {
+  background-color: #f8f9fa;
+}
+
+// Level header row styling
+tr.mat-row.level-start {
+  background-color: #f5f5f5;
+}
+
+// Tab group styles
+mat-tab-group {
+  margin-top: 20px;
+}
+
+.container-fluid {
+  padding: 20px;
+}
+
+th.mat-header-cell {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 16px;
+}
+
+td.mat-cell {
+  padding: 16px;
+}
+
+tr.mat-row:nth-child(even) {
+  background-color: #fafafa;
+}
+
+tr.mat-row:hover {
+  background-color: #f0f0f0;
+}
+
+.friends-tables {
+  text-align: left;
+  padding-left: 20px;
+
+  table {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    
+    th {
+      background-color: #f8f9fa;
+      font-size: 0.9rem;
+      padding: 0.5rem;
+    }
+    
+    td {
+      font-size: 0.9rem;
+      padding: 0.4rem;
+    }
+  }
+
+  .compact-table {
+    width: 250px;
+    margin: 0;
+    
+    th, td {
+      padding: 0.3rem;
+      font-size: 0.85rem;
+      text-align: center;
+    }
+    
+    th {
+      background-color: #f8f9fa;
+    }
+  }
+
+  .h4 {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    margin: 1rem 0 0.5rem 0;
+    text-align: left;
+  }
+}
+
+.syllabus-table {
+  text-align: left;
+  padding-left: 20px;
+  margin-top: 1rem;
+
+  table {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 600px;
+
+    th, td {
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      vertical-align: middle;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      font-weight: 500;
+      text-align: left;
+    }
+
+    td {
+      text-align: left;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    tr:hover {
+      background-color: #f5f5f5;
+    }
+  }
+
+  // Additional styles for student syllabus
+  tr {
+    td:first-child:empty {
+      position: relative;
+      &::after {
+        content: "";
+        display: block;
+        border-bottom: 1px solid #dee2e6;
+        position: absolute;
+        width: 80%;
+        left: 10%;
+        top: 50%;
+      }
+    }
+
+    &.level-start {
+      background-color: #f8f9fa;
+      font-weight: 500;
+    }
+  }
+}
+
+.table-container {
+  margin: 0 auto;
+  max-width: 90%;
+
+  table {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;  // Centers the table
+    width: fit-content;  // Makes table take only required width
+
+    th, td {
+      text-align: center;  // Centers the content inside table cells
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      vertical-align: middle;
+      border: 1px solid #dee2e6;
+    }
+  }
+}
+
+.table-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+
+  .range-info {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  .mat-mdc-paginator {
+    background: transparent;
+  }
+}
+
+.entries-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1rem;
+  
+  mat-form-field {
+    width: 70px;
+    margin: 0 8px;
+  }
+}
+
+.syllabus-heading {
+  text-align: left;
+  margin: 20px 0;
+  color: #000000;
+  font-size: 35px;
+  font-weight: 500;
+  padding-left: 10px;
+}
+
+.combinations-section {
+  margin-top: 2rem;
+  
+  h2 {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.combinations-table {
+  text-align: left;
+  padding-left: 20px;
+
+  table {
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    width: auto;
+    min-width: 400px;
+    border-collapse: collapse;
+
+    th, td {
+      padding: 0.4rem 1rem;
+      font-size: 0.9rem;
+      vertical-align: middle;
+      text-align: left;
+      border: 1px solid #dee2e6;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      font-weight: 500;
+    }
+
+    // Small friends combinations (first 8 rows)
+    tr:nth-child(-n+8) {
+      background-color: #FFE4D6;  // Light peach/orange color
+      &:hover {
+        background-color: color.adjust(#FFE4D6, $lightness: -5%);
+      }
+    }
+
+    // Big friends addition combinations (next 9 rows)
+    tr:nth-child(n+9):nth-child(-n+17) {
+      background-color: #E6F3FF;  // Light blue color
+      &:hover {
+        background-color: color.adjust(#E6F3FF, $lightness: -5%);
+      }
+    }
+
+    // Double combinations with 10-5 (next 3 rows)
+    tr:nth-child(n+18):nth-child(-n+20) {
+      background-color: #E8FFE8;  // Light green color
+      &:hover {
+        background-color: color.adjust(#E8FFE8, $lightness: -5%);
+      }
+    }
+
+    // Big friends subtraction combinations (next 9 rows)
+    tr:nth-child(n+21):nth-child(-n+29) {
+      background-color: #FFE6E6;  // Light pink/rose color
+      &:hover {
+        background-color: color.adjust(#FFE6E6, $lightness: -5%);
+      }
+    }
+
+    // Double combinations with 10+5 (remaining rows)
+    tr:nth-child(n+30) {
+      background-color: #E8FFE8;  // Light green color
+      &:hover {
+        background-color: color.adjust(#E8FFE8, $lightness: -5%);
+      }
+    }
+  }
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.search-field {
+  width: 300px;
+  margin-bottom: 0;
+}
+
+.main-heading {
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin: 1.5rem 0;
+  text-align: center;
+}
+
+.section-heading {
+  font-size: 24px;
+  font-weight: 500;
+  color: #34495e;
+  margin: 25px 0 20px 0;
+  text-align: left;
+}
+
+img {
+  width: 24px;
+  height: 24px;
+}
+
+.h4 {
+  font-size: 18px;
+  font-weight: 500;
+  color: #34495e;
+  margin: 15px 0;
+  text-align: left;
+}
