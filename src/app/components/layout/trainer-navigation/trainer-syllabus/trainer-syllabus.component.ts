@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule, ActivatedRoute } from '@angular/router';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -240,8 +240,46 @@ export class TrainerSyllabusComponent implements OnInit {
     newStudentRangeEnd: number = 10;
     newStudentTotalEntries: number = 0;
 
+    constructor(
+        private router: Router,
+        private route: ActivatedRoute
+    ) {}
+
     setActiveTab(tab: string): void {
-        this.activeTab = tab; // Method to update the activeTab property
+        this.activeTab = tab;
+        // Update URL with the new tab
+        this.router.navigate([], {
+            relativeTo: this.route,
+            queryParams: { tab: tab },
+            queryParamsHandling: 'merge'
+        });
+    }
+
+    getSelectedIndex(): number {
+        switch (this.activeTab) {
+            case 'trainer':
+                return 0;
+            case 'student':
+                return 1;
+            case 'newstudent':
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+    onTabChange(index: number): void {
+        switch (index) {
+            case 0:
+                this.setActiveTab('trainer');
+                break;
+            case 1:
+                this.setActiveTab('student');
+                break;
+            case 2:
+                this.setActiveTab('newstudent');
+                break;
+        }
     }
 
     isLevelStart(item: SyllabusItem): boolean {
@@ -273,6 +311,12 @@ export class TrainerSyllabusComponent implements OnInit {
     }
 
     ngOnInit() {
+        // Get initial tab from URL or default to trainer
+        this.route.queryParams.subscribe(params => {
+            const tab = params['tab'] || 'trainer';
+            this.setActiveTab(tab);
+        });
+
         this.filteredStudentExercises = [...this.studentExercises];
         this.totalEntries = this.studentExercises.length;
         this.updateRange();
