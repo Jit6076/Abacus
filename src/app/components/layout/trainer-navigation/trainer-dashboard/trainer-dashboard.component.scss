@@ -1,0 +1,209 @@
+@media (min-width: 992px) {
+    .col-lg-2 {
+        flex: 0 0 auto;
+        width: 11.666667%;
+    }
+}
+
+#wrapper {
+  padding-left: 0;
+  transition: all 0.5s ease;
+}
+
+#wrapper.toggled {
+  padding-left: 220px;
+}
+
+
+
+#wrapper.toggled #sidebar-wrapper {
+  width: 220px;
+}
+
+#page-content-wrapper {
+  width: 100%;
+  margin-top: 5px;
+}
+
+.navbar {
+  background-color: #1a1a1a;
+  border: none;
+}
+
+.navbar .nav > li > a {
+  color: #ddd;
+  padding: 10px 15px;
+}
+
+.navbar .nav > li > a:hover {
+  color: white;
+  background-color: transparent;
+}
+
+.table {
+  width: 100%;
+  border: 1px solid black;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+  border: 1px solid #dee2e6;
+
+  th {
+    background-color: #f8f9fa;
+    border-bottom: 2px solid #dee2e6;
+    padding: 12px;
+  }
+
+  td {
+    padding: 12px;
+    border-bottom: 1px solid #dee2e6;
+  }
+
+  thead tr th {
+    font-weight: 600;
+    color: #333;
+  }
+
+  tbody tr:hover {
+    background-color: #f5f5f5;
+  }
+
+  a {
+    color: #007bff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.table th,
+.table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: left;
+}
+
+.table th {
+  background-color: #cccccc;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  margin: 0 1rem;
+}
+
+.notification-bell {
+  position: relative;
+  display: inline-block;
+}
+
+.notification-bell .bell-icon {
+  font-size: 30px;
+  color: #333;
+}
+
+.notification-bell .notification-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 1px 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* General styles for the dashboard */
+.container {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+
+
+/* Styles for the mandatory training message */
+.mandatory-training {
+  background-color: #ffcccc;
+  padding: 15px;
+  border: 1px solid #ff9999;
+  border-radius: 5px;
+  text-align: left;
+  width: fit-content;
+}
+
+.mandatory-training h3 {
+  text-align: center;
+}
+
+.mandatory-training p {
+  margin: 5px 0;
+}
+
+/* Styles for the announcement section */
+.announcement-section {
+  background-color: #f8f9fa;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 15px 0;
+}
+
+.announcement-section h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.announcement-section p {
+  margin: 5px 0;
+}
+
+.main-heading {
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+.navigation-grid {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.nav-card {
+  background-color: #f4a460;
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  mat-icon {
+    font-size: 2rem;
+    height: 2rem;
+    width: 2rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .card-title {
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    text-align: center;
+    line-height: 1.2;
+    padding-top: 0.5rem;
+  }
+}

@@ -36,7 +36,8 @@ export const routes: Routes = [
             },
             
             {
-                path:'trainerNavigation',
+                path: 'trainer',
+                loadChildren: () => import('./components/layout/trainer-navigation/trainer-navigation.module').then(m => m.TrainerNavigationModule),
                 component: TrainerNavigationComponent,
             },
             {

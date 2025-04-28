@@ -47,14 +47,13 @@ export class LoginComponent {
           this.router.navigate(['adminDashboard'], { replaceUrl: true });
         }else if(response.role=='student'){
           this.router.navigate(['dashboard'], { replaceUrl: true });
-        }else{
+        }else if (this.loginTypeName === 'Trainer Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
+        this.router.navigate(['trainer/trainer-dashboard'], { replaceUrl: true });
+        console.log('Trainer Login Successful');
+          else{
           alert("Invalid User")
         }
       })
-      // if(this.loginForm.value.username=="Yaksh1" && this.loginForm.value.password=="12345"){
-      //   //this.router.navigate(['dashboard'], { replaceUrl: true });
-      //   this.router.navigate(['adminDashboard'], { replaceUrl: true });
-      // }
       // Here you would typically send the form data to your authentication service
     } else {
       // Mark all controls as touched to display validation errors
