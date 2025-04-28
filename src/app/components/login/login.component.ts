@@ -50,6 +50,7 @@ export class LoginComponent {
         }else if (this.loginTypeName === 'Trainer Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
         this.router.navigate(['trainer/trainer-dashboard'], { replaceUrl: true });
         console.log('Trainer Login Successful');
+        }
           else{
           alert("Invalid User")
         }
