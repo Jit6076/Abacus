@@ -11,6 +11,7 @@ import { AdminDashboardComponent } from './components/layout/admin-navigation/ad
 import { TrainerManagementComponent } from './components/layout/admin-navigation/trainer-management/trainer-management.component';
 import { StudentManagementComponent } from './components/layout/admin-navigation/student-management/student-management.component';
 import { StudentAddEditComponent } from './components/layout/admin-navigation/student-management/student-add-edit/student-add-edit.component';
+import { AbacusToolComponent } from './components/layout/abacus-tool/abacus-tool.component';
 // import { DashboardComponent } from './pages/dashboard/dashboard.component';
 // import { VehiclesComponent } from './pages/vehicles/vehicles.component';
 
@@ -44,6 +45,10 @@ export const routes: Routes = [
                 component: AdminNavigationComponent,
                 loadChildren: () => import('./components/layout/admin-navigation/admin-navigation.module').then(m => m.AdminNavigationModule),
             },
+            {
+                path:'abacusTool',
+                component: AbacusToolComponent
+            }
             
         ]
 //     },

@@ -1,0 +1,364 @@
+
+.container {
+    text-align: center;
+}
+.fretboard {
+    width: 120px;
+    height: 150px;
+    border: 5px solid #ccc;
+    position: relative;
+}
+.fretboard .string {
+    position: absolute;
+    width: 5px;
+    height: 100%;
+    background-color: black;
+}
+.fretboard .string:nth-child(1) { left: 25%; }
+.fretboard .string:nth-child(2) { left: 50%; }
+.fretboard .string:nth-child(3) { left: 75%; }
+.fretboard .dot {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    top: 25%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+.input-field {
+    margin-bottom: 20px;
+}
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(5, 60px);
+    gap: 10px;
+}
+.keypad button {
+    width: 60px;
+    height: 60px;
+    background-color: #d8bfd8;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+.keypad button.operation {
+    background-color: #4b0082;
+}
+.keypad button.special {
+    background-color: #2f4f4f;
+}
+
+// .abacus {
+//     display: flex;
+//     justify-content: center;
+//     gap: 30px;
+//     margin: 20px auto;
+//   }
+  
+//   .column {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     position: relative;
+//     height: 220px;
+//     width: 40px;
+//   }
+  
+//   .bead {
+//     width: 30px;
+//     height: 30px;
+//     background: #b44;
+//     border-radius: 50%;
+//     position: absolute;
+//     left: 5px;
+//     transition: transform 0.3s ease-in-out;
+//     cursor: pointer;
+//   }
+  
+//   .bead.upper {
+//     background: #c66;
+//     top: 10px;
+//   }
+  
+//   .bead.upper.active {
+//     transform: translateY(40px); /* slide down */
+//   }
+  
+//   .spacer {
+//     position: absolute;
+//     top: 60px;
+//     width: 100%;
+//     border-bottom: 2px solid #444;
+//   }
+  
+//   .bead.lower {
+//     background: #a33;
+//   }
+  
+//   .column .value {
+//     position: absolute;
+//     bottom: -20px;
+//     font-size: 14px;
+//     font-weight: bold;
+//   }
+  
+//   /* Lower bead positioning */
+//   .bead.lower:nth-child(4) { top: 80px; }
+//   .bead.lower:nth-child(5) { top: 115px; }
+//   .bead.lower:nth-child(6) { top: 150px; }
+//   .bead.lower:nth-child(7) { top: 185px; }
+  
+//   .bead.lower.active {
+//     transform: translateY(-25px); /* slide up */
+//   }
+  
+//   .abacus.disabled .bead {
+//     cursor: not-allowed;
+//     opacity: 0.4;
+//   }
+
+// .abacus {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     gap: 20px;
+//     background: #f7ede2;
+//     padding: 20px;
+//     border-radius: 15px;
+//     box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+//   }
+  
+//   h2 {
+//     font-family: 'Georgia', serif;
+//     color: #6b4226;
+//   }
+  
+//   .rods {
+//     display: flex;
+//     gap: 25px;
+//     margin-top: 20px;
+//   }
+  
+//   .rod {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     background: #8d6e63;
+//     padding: 10px 5px;
+//     border-radius: 10px;
+//     box-shadow: inset 0px 0px 5px #5d4037;
+//   }
+  
+//   .bead {
+//     width: 35px;
+//     height: 35px;
+//     background-color: #ffb703;
+//     border: 2px solid #6b4226;
+//     border-radius: 50%;
+//     margin: 7px 0;
+//     transition: all 0.2s ease;
+//     cursor: grab;
+//     position: relative;
+//   }
+  
+//   .bead.upper {
+//     background-color: #fb8500;
+//   }
+  
+//   .bead.lower {
+//     background-color: #ffb703;
+//   }
+  
+  .bead.active {
+    transform: translateY(12px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+//   .divider {
+//     width: 50px;
+//     height: 5px;
+//     background: #000;
+//     margin: 12px 0;
+//   }
+
+// .abacus-container {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     background-color: #fef5e7;
+//     height: 100vh;
+//     padding-top: 20px;
+//     font-family: 'Georgia', serif;
+//   }
+  
+//   .total {
+//     font-size: 32px;
+//     font-weight: bold;
+//     color: #5d2600;
+//     margin-bottom: 20px;
+//   }
+  
+//   .abacus-frame {
+//     display: flex;
+//     justify-content: center;
+//     align-items: flex-start;
+//     background-color: #8b5a2b;
+//     padding: 20px;
+//     border-radius: 20px;
+//     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+//     position: relative;
+//   }
+  
+//   .rod {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin: 0 10px;
+//     position: relative;
+//   }
+  
+//   .upper-bead, .lower-bead {
+//     width: 30px;
+//     height: 30px;
+//     background: linear-gradient(#ff8c00, #ffa500);
+//     border-radius: 50%;
+//     margin: 8px 0;
+//     box-shadow: inset -2px -2px 4px rgba(0,0,0,0.2);
+//     transition: all 0.2s;
+//     cursor: pointer;
+//   }
+  
+//   .upper-bead.active, .lower-bead.active {
+//     background: linear-gradient(#ff4500, #ff6347);
+//   }
+  
+.abacus-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff7ec;
+   // height: 100vh;
+    padding-top: 20px;
+    font-family: 'Georgia', serif;
+  }
+  
+  .total {
+    font-size: 32px;
+    font-weight: bold;
+    color: #5d2600;
+    margin-bottom: 20px;
+  }
+  
+  .abacus-frame {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    // background-color: #8b5a2b;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    border: 5px solid;
+    // padding-bottom: 0px;
+  }
+  
+//   .rod {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     margin: 0 10px;
+//     background-color: #a87c5b;
+//     padding: 10px;
+//     border-radius: 12px;
+//   }
+  
+//   .upper-bead, .lower-bead {
+//     width: 40px;
+//     height: 40px;
+//     background-color: orange;
+//     border: 2px solid #5d2600;
+//     border-radius: 50%;
+//     margin: 8px 0;
+//     cursor: pointer;
+//     transition: transform 0.2s, background-color 0.3s;
+//   }
+.rod {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10px;
+    background-color: transparent; /* no background */
+    padding: 10px 0;
+    position: relative;
+    // top: -20px;
+  }
+  
+  .rod-line {
+    width: 5px;
+    background-color: #000000;
+    flex-grow: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 0;
+    // height: 107%;
+  }
+  
+  .upper-bead, .lower-bead {
+    width: 40px;
+    height: 40px;
+    background-color: orange;
+    border: 2px solid #5d2600;
+    border-radius: 50%;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .upper-bead.active {
+    background-color: #ff8c00;
+    transform: translateY(10px); /* Upper beads move DOWN when active */
+  }
+  
+  .lower-bead.active {
+    background-color: #ff8c00;
+    transform: translateY(-20px); /* Lower beads move UP when active */
+  }
+  
+  
+  .lower-beads {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .divider {
+    width: 250%;
+    height: 5px;
+    background-color: black;
+    margin: 10px 0;
+    position: relative;
+  }
+  
+  .divider-dot {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+  }
+  
+//   .lower-beads {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//   }

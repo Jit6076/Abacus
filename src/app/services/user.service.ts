@@ -45,4 +45,15 @@ export class UserService {
     formData.append('isActive', userData.isActive.toString());
     return this.http.post('http://localhost:5015/api/user/CreateUser', user);
   }
+
+  getAllUsers(): Observable<any> {
+    return this.http.get('http://localhost:5015/api/user/GetAllUsers');
+  }
+  loginUser(userData: any): Observable<any> {
+    let param={
+      userName: userData.username,
+      password: userData.password
+    }
+    return this.http.post('http://localhost:5015/api/user/Login', param);
+  }
 }

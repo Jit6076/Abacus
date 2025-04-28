@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -7,17 +7,20 @@ import {
   Validators,
 } from '@angular/forms';
 import { Router } from '@angular/router';
+import { UserService } from '../../services/user.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
   imports: [ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss',
+  providers: [UserService],
 })
 export class LoginComponent {
   loginForm: FormGroup;
   passwordVisible: boolean = false;
-
+  userService=inject(UserService);
   constructor(private router: Router) {
     this.loginForm = new FormGroup({
       username: new FormControl('', Validators.required),
@@ -33,13 +36,24 @@ export class LoginComponent {
   onSubmit(): void {
     if (this.loginForm.valid) {
       console.log('Login Form Data:', this.loginForm.value);
-      if (this.loginTypeName === 'Student Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
-        this.router.navigate(['dashboard'], { replaceUrl: true });
-        console.log('Student Login Successful');
-      } else if (this.loginTypeName === 'Trainer Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
+      this.userService.loginUser(this.loginForm.value).subscribe(response=>{
+        // Swal.fire({
+        //   title: "Success",
+        //   text: "Login Successful",
+        //   icon: "success",
+        //   confirmButtonText: "OK",
+        // });
+        if(response.role=='Admin'){
+          this.router.navigate(['adminDashboard'], { replaceUrl: true });
+        }else if(response.role=='student'){
+          this.router.navigate(['dashboard'], { replaceUrl: true });
+        }else if (this.loginTypeName === 'Trainer Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
         this.router.navigate(['trainer/trainer-dashboard'], { replaceUrl: true });
         console.log('Trainer Login Successful');
-      }
+          else{
+          alert("Invalid User")
+        }
+      })
       // Here you would typically send the form data to your authentication service
     } else {
       // Mark all controls as touched to display validation errors
