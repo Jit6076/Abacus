@@ -1,0 +1,156 @@
+<div class="container-fluid">
+    <div class="row" style="justify-content: center;">
+        <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8 mb-3" style="padding-top: 10px;">
+            <mat-card style="    padding: 20px;">
+                <div class="container">
+                    <button mat-icon-button (click)="goBack()" aria-label="Back" style="float: left;border: none;">
+                        <mat-icon>arrow_back</mat-icon>
+                    </button>
+                    <!-- <div class="fretboard" style="margin: auto;">
+                        <div class="string"></div>
+                        <div class="string">
+                        </div>
+                        <div class="string"></div>
+                        <div class="" style="    position: relative;
+                        left: 48%;
+                        top: -5%;
+                        rotate: 90deg;
+                        width: 5px;
+                        height: 80%;
+                        background-color: black;"></div>
+                        <div class="" style="position: relative;
+                        left: 50%;
+                        top: -48%;
+                        rotate: 90deg;
+                        width: 5px;
+                        height: 6%;
+                        background-color: #efeded;
+                        border-radius: 20px;"></div>
+                        <div class="dot"></div>
+                    </div> -->
+                    <!-- <div class="abacus" [class.disabled]="disabled">
+                        <div class="column" *ngFor="let col of columns; let i = index">
+                          <div class="bar"></div>
+                          <div class="bead upper" [class.active]="col.upper" (click)="toggleUpper(i)"></div>
+                          <div class="spacer"></div>
+                          <div class="bead lower"
+                               *ngFor="let bead of col.lower; let j = index"
+                               [class.active]="bead"
+                               (click)="toggleLower(i, j)">
+                          </div>
+                          <div class="value">{{ getColumnValue(col) }}</div>
+                        </div>
+                      </div> -->
+                    <!-- <div class="abacus-container">
+                        <div class="total">Total: {{ totalValue }}</div>
+                        <div class="abacus-frame">
+                          <div class="rod" *ngFor="let rod of rods; let i = index">
+                            <div class="rod-line"></div>
+                            <div class="upper-bead" 
+                                 [class.active]="upperBeads[i][0]"
+                                 (click)="toggleUpperBead(i)">
+                            </div>
+                            <div class="divider">
+                              <div *ngIf="i % 2 != 0" class="divider-dot"></div>
+                            </div>
+                            <div class="lower-beads">
+                              <div class="lower-bead" 
+                                   *ngFor="let bead of lowerBeads[i]; let j = index"
+                                   [class.active]="lowerBeads[i][j]"
+                                   (click)="toggleLowerBead(i, j)">
+                              </div>
+                            </div>
+                      
+                          </div>
+                        </div>
+                      </div> -->
+                    <!-- <div class="abacus-container">
+                        <div class="total">Total: {{ totalValue }}</div>
+                        <div class="abacus-frame">
+                            <div class="rod" *ngFor="let rod of rods; let i = index">
+  
+                                <div class="rod-line"></div>
+                                <div *ngIf="activeRods[i] && upperBeads[i][0]" 
+                                     class="upper-bead" 
+                                     [class.active]="upperBeads[i][0]"
+                                     (click)="toggleUpperBead(i)">
+                                </div>
+                                <div class="divider">
+                                  <div *ngIf="i % 2 != 0" class="divider-dot"></div>
+                                </div>
+                                <div class="lower-beads">
+                                  <div *ngFor="let bead of lowerBeads[i]; let j = index">
+                                    <div *ngIf="activeRods[i] && lowerBeads[i][j]" 
+                                         class="lower-bead" 
+                                         [class.active]="lowerBeads[i][j]"
+                                         (click)="toggleLowerBead(i, j)">
+                                    </div>
+                                  </div>
+                                </div>
+                              
+                              </div>
+                        </div>
+                    </div> -->
+                    <div class="abacus-container">
+                        <div class="total">Total: {{ totalValue }}</div>
+                        <div class="abacus" [class.disabled]="disabled">
+                            <div class="abacus-frame">
+                                <div class="rod" *ngFor="let rod of rods; let i = index">
+    
+                                    <div class="rod-line"></div>
+                                    <div class="upper-bead" [class.active]="upperBeads[i][0]"
+                                        [style.visibility]="activeRods[i] && upperBeads[i][0] ? 'visible' : 'hidden'"
+                                        [ngStyle]="{ 'pointer': disabled ? 'not-allowed' : 'pointer' }"
+                                        (click)="toggleUpperBead(i)">
+                                    </div>
+    
+                                    <!-- Divider with optional white dot -->
+                                    <div class="divider">
+                                        <div *ngIf="i % 2 != 0" class="divider-dot"></div>
+                                    </div>
+    
+                                    <!-- Lower beads -->
+                                    <div class="lower-beads">
+                                        <div *ngFor="let bead of lowerBeads[i]; let j = index">
+                                            <div class="lower-bead" [class.active]="lowerBeads[i][j]"
+                                                [style.visibility]="activeRods[i] && lowerBeads[i][j] ? 'visible' : 'hidden'"
+                                                [ngStyle]="{ 'pointer': disabled ? 'not-allowed' : 'pointer' }"
+                                                (click)="toggleLowerBead(i, j)">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 mb-3" style="padding-top: 10px;margin: auto;">
+                        <mat-form-field class="example-full-width" appearance="outline"
+                            style="width: 100%; margin-top: 20px;">
+                            <input matInput placeholder="Enter value">
+                        </mat-form-field>
+                    </div>
+
+                    <div class="keypad" style="justify-content: center;">
+                        <button class="operation">-</button>
+                        <button>1</button>
+                        <button>2</button>
+                        <button>3</button>
+                        <button class="special">Next</button>
+                        <button class="operation">+</button>
+                        <button>4</button>
+                        <button>5</button>
+                        <button>6</button>
+                        <button class="special">Delete</button>
+                        <button>.</button>
+                        <button>7</button>
+                        <button>8</button>
+                        <button>9</button>
+                        <button>0</button>
+
+                    </div>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+</div>
