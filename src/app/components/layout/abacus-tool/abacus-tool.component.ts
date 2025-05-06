@@ -1,19 +1,20 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, HostListener, Input, Output } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import {MatInputModule} from '@angular/material/input';
 
 @Component({
   selector: 'app-abacus-tool',
-  imports: [MatCardModule, CommonModule, MatIconModule, MatInputModule],
+  imports: [MatCardModule, CommonModule, MatIconModule, MatInputModule,FormsModule],
   templateUrl: './abacus-tool.component.html',
   styleUrl: './abacus-tool.component.scss'
 })
 export class AbacusToolComponent {
-  disabled:boolean = true;
+  disabled:boolean = false;
   ngOnInit() {
-    this.setAbacusValue(22); // Initialize with 0 or any default value
+    this.setAbacusValue(9999999); // Initialize with 0 or any default value
   }
 
   goBack(){
@@ -46,7 +47,7 @@ export class AbacusToolComponent {
 
   // getColumnValue(col: { upper: boolean; lower: boolean[] }): number {
   //   const upper = col.upper ? 5 : 0;
-  //   const lower = col.lower.filter(b => b).length;
+  //   const lower = col.lower.filter(b => b).length; 
   //   return upper + lower;
   // }
 
@@ -60,18 +61,19 @@ export class AbacusToolComponent {
   // onAbacusValueChanged(value: number) {
   //   this.abacusValue = value;
   // }
-  rodsCount = 3;
+  rodsCount = 7;
   rods = Array(this.rodsCount);
   upperBeads: number[][] = [];
   lowerBeads: number[][] = [];
   totalValue: number = 0;
-
+  inputValue: number = 0;
   dragging = false;
   draggedRodIndex: number | null = null;
   draggedBeadIndex: number | null = null;
 
   constructor() {
     this.initializeBeads();
+    
   }
 
   initializeBeads() {
@@ -79,6 +81,7 @@ export class AbacusToolComponent {
       this.upperBeads[i] = [0]; // 1 upper bead (value 5)
       this.lowerBeads[i] = [0, 0, 0, 0]; // 4 lower beads (each value 1)
     }
+    //this.activeRods = new Array(this.rodsCount).fill(true);
   }
 
   toggleUpperBead(rodIndex: number) {
@@ -89,7 +92,19 @@ export class AbacusToolComponent {
 
   toggleLowerBead(rodIndex: number, beadIndex: number) {
     if(this.disabled) return;
-    this.lowerBeads[rodIndex][beadIndex] = this.lowerBeads[rodIndex][beadIndex] ? 0 : 1;
+    if(this.lowerBeads[rodIndex][beadIndex] === 1) {
+      for(let i=beadIndex;i<4;i++){
+        if(this.lowerBeads[rodIndex][i] === 0) break;
+        this.lowerBeads[rodIndex][i] = this.lowerBeads[rodIndex][i] ? 0 : 1;
+        }
+    }
+    else {
+      for(let i=beadIndex;i>=0;i--){
+        if(this.lowerBeads[rodIndex][i] === 1) break;
+        this.lowerBeads[rodIndex][i] = this.lowerBeads[rodIndex][i] ? 0 : 1;
+        }
+    }
+    
     this.calculateTotal();
   }
 
@@ -100,6 +115,7 @@ export class AbacusToolComponent {
       const upper = this.upperBeads[i][0] * 5;
       const lower = this.lowerBeads[i].reduce((a, b) => a + b, 0);
       this.totalValue += (upper + lower) * placeValue;
+      this.inputValue=this.totalValue
     }
   }
 
@@ -130,5 +146,35 @@ export class AbacusToolComponent {
     }
   
     this.calculateTotal();
+  }
+  onInputChange(event: any) {
+
+  }
+  onBackspace() {
+    if(this.disabled) return;
+    this.setAbacusValue(Math.floor(this.totalValue / 10));
+  }
+
+  onEnter() {
+    if(this.disabled) return;
+    this.setAbacusValue(this.totalValue);
+  }
+  buttonClickNumber(num: number) {
+
+  }
+  buttonClicksp(ec: string) {
+    if(this.disabled) return;
+    if (ec === '.') {
+      this.setAbacusValue(0);
+    } else if (ec === 'Delete') {
+      this.setAbacusValue(Math.floor(this.totalValue / 10));
+    } else if (ec === '+') {
+      //this.onBackspace();
+    } else if (ec === '-') {
+      //this.onEnter();
+    }
+    else if (ec === 'Next') {
+     // this.onEnter();
+    }
   }
 }

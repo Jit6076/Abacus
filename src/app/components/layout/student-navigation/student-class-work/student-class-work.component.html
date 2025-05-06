@@ -29,7 +29,20 @@
                                         </mat-panel-description>
                                     </mat-expansion-panel-header>
                                     <div class="row">
-                                        <div class="col-md-12 col-sm-12 col-lg-12 mb-2" *ngFor="let j of i.data;let y = index">
+                                        <div class="col-md-12 col-sm-12 col-lg-12 mb-2">
+                                            <div class="container1">
+                                                <div *ngFor="let section of i.worksheets" class="section">
+                                                  <h3 class="section-title">{{ section.title }}</h3>
+                                              
+                                                  <div class="grid">
+                                                    <button mat-raised-button color="primary" class="item" *ngFor="let item of section.items" >
+                                                      <div class="label">{{ item.label }}</div>
+                                                      <div class="scores" style="display: inline-flex;">{{ item.score1 }}
+                                                        <mat-icon style="font-size: 18px;">lock</mat-icon></div>
+                                                    </button>
+                                                  </div>
+                                                </div>
+                                              </div>
                                         </div>
                                         </div>
                                    </mat-expansion-panel>

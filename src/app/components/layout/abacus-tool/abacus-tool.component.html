@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row" style="justify-content: center;">
-        <div class="col-md-8 col-sm-8 col-xs-8 col-lg-8 mb-3" style="padding-top: 10px;">
-            <mat-card style="    padding: 20px;">
+        <div class="col-md-6 col-lg-6 col-sm-6 col-xs-6 mb-3" style="padding-top: 10px;">
+            <mat-card style="    padding: 10px;">
                 <div class="container">
                     <button mat-icon-button (click)="goBack()" aria-label="Back" style="float: left;border: none;">
                         <mat-icon>arrow_back</mat-icon>
@@ -96,25 +96,25 @@
                         <div class="abacus" [class.disabled]="disabled">
                             <div class="abacus-frame">
                                 <div class="rod" *ngFor="let rod of rods; let i = index">
-    
+                                    <!-- [style.visibility]="activeRods[i] && upperBeads[i][0] ? 'visible' : 'hidden'"
+                                    [ngStyle]="{ 'pointer': disabled ? 'not-allowed' : 'pointer' }" -->
                                     <div class="rod-line"></div>
                                     <div class="upper-bead" [class.active]="upperBeads[i][0]"
-                                        [style.visibility]="activeRods[i] && upperBeads[i][0] ? 'visible' : 'hidden'"
-                                        [ngStyle]="{ 'pointer': disabled ? 'not-allowed' : 'pointer' }"
+                                        
                                         (click)="toggleUpperBead(i)">
                                     </div>
     
                                     <!-- Divider with optional white dot -->
                                     <div class="divider">
-                                        <div *ngIf="i % 2 != 0" class="divider-dot"></div>
+                                        <div *ngIf="i % 3 === 0" class="divider-dot"></div>
                                     </div>
     
-                                    <!-- Lower beads -->
+                                    <!-- Lower beads [style.visibility]="activeRods[i] && lowerBeads[i][j] ? 'visible' : 'hidden'"
+                                                [ngStyle]="{ 'pointer': disabled ? 'not-allowed' : 'pointer' }"-->
                                     <div class="lower-beads">
                                         <div *ngFor="let bead of lowerBeads[i]; let j = index">
                                             <div class="lower-bead" [class.active]="lowerBeads[i][j]"
-                                                [style.visibility]="activeRods[i] && lowerBeads[i][j] ? 'visible' : 'hidden'"
-                                                [ngStyle]="{ 'pointer': disabled ? 'not-allowed' : 'pointer' }"
+                                                
                                                 (click)="toggleLowerBead(i, j)">
                                             </div>
                                         </div>
@@ -127,26 +127,27 @@
                     <div class="col-md-5 col-lg-5 col-sm-5 col-xs-5 mb-3" style="padding-top: 10px;margin: auto;">
                         <mat-form-field class="example-full-width" appearance="outline"
                             style="width: 100%; margin-top: 20px;">
-                            <input matInput placeholder="Enter value">
+                            <input matInput placeholder="Enter value" [(ngModel)]="inputValue" (ngModelChange)="onInputChange($event)"
+                                (keydown.enter)="onEnter()" (keydown.backspace)="onBackspace()">
                         </mat-form-field>
                     </div>
 
                     <div class="keypad" style="justify-content: center;">
-                        <button class="operation">-</button>
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
-                        <button class="special">Next</button>
-                        <button class="operation">+</button>
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
-                        <button class="special">Delete</button>
-                        <button>.</button>
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
-                        <button>0</button>
+                        <button (click)="buttonClicksp('-')" class="operation">-</button>
+                        <button (click)="buttonClickNumber(1)">1</button>
+                        <button (click)="buttonClickNumber(2)">2</button>
+                        <button (click)="buttonClickNumber(3)">3</button>
+                        <button (click)="buttonClicksp('Next')" class="special">Next</button>
+                        <button (click)="buttonClicksp('+')" class="operation">+</button>
+                        <button (click)="buttonClickNumber(4)">4</button>
+                        <button (click)="buttonClickNumber(5)">5</button>
+                        <button (click)="buttonClickNumber(6)">6</button>
+                        <button (click)="buttonClicksp('Delete')" class="special">Delete</button>
+                        <button (click)="buttonClicksp('.')">.</button>
+                        <button (click)="buttonClickNumber(7)">7</button>
+                        <button (click)="buttonClickNumber(8)">8</button>
+                        <button (click)="buttonClickNumber(9)">9</button>
+                        <button (click)="buttonClickNumber(0)">0</button>
 
                     </div>
                 </div>

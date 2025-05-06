@@ -47,11 +47,11 @@ export class LoginComponent {
           this.router.navigate(['adminDashboard'], { replaceUrl: true });
         }else if(response.role=='student'){
           this.router.navigate(['dashboard'], { replaceUrl: true });
-        }else if (this.loginTypeName === 'Trainer Login' && this.loginForm.value.username === 'Yaksh1' && this.loginForm.value.password === '12345') {
+        }else if (response.role=='students') {
         this.router.navigate(['trainer/trainer-dashboard'], { replaceUrl: true });
         console.log('Trainer Login Successful');
         }
-          else{
+        else{
           alert("Invalid User")
         }
       })
