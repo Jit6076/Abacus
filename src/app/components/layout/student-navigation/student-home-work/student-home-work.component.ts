@@ -17,7 +17,7 @@ export class StudentHomeWorkComponent {
       id:1,
       name :'Level 1',
       completed:false,
-      data : [
+      level_1 : [
         {
           name:'Reading numbers till 4',
           completed:true,
@@ -25,7 +25,6 @@ export class StudentHomeWorkComponent {
         },
         {
           name:'Reading numbers till 5',
-          
           completed:false,
           tag:"HW: 2/2 'A'"
         },
@@ -37,6 +36,12 @@ export class StudentHomeWorkComponent {
         },
         {
           name:'Reading numbers till 99',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Reading numbers till 999',
           
           completed:false,
           tag:"HW: 2/2 'A'"
@@ -66,6 +71,12 @@ export class StudentHomeWorkComponent {
           tag:"HW: 2/2 'A'"
         },
         {
+          name:'Add using +5',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
           name:'Add 1 with small friends',
           
           completed:false,
@@ -84,31 +95,43 @@ export class StudentHomeWorkComponent {
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:' Add 4 with small friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract using -5',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Add & Subtract using 5',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 1 with small friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 2 with small friends',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Subtract 3 with small friends',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Subtract 4 with small friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
@@ -118,99 +141,147 @@ export class StudentHomeWorkComponent {
     {
       id:2,
       name :'Level 2',
-      data : [
+      level_2 : [
         {
-          name:'Reading numbers till 4',
+          name:'Big Friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
+          name:' Small & Big Friends (1to4)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 9',
+          name:'Small & Big Friends (All)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 99',
+          name:'Add Using +10 (1to4)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of lower beads',
+          name:'Add Using +10/+5 (1to4)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of upper beads',
+          name:'Add 1 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of mix beads',
+          name:'Add 2 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Small Friends',
+          name:'Add 3 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 1 with small friends',
+          name:'Add 4 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 2 with small friends',
+          name:'Add Using +10 (1to9)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:' Add 3 with small friends',
+          name:' Add using +5, -5, +10',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Add 5 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Add 6 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Add 7 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Add 8 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Add 9 with big friends',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 6 with double combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 6 with double & single combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 7 with double combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 7 with double & single combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 8 with double combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 8 with double & single combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add 9 with double combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:' Add 9 with double & single combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
@@ -220,99 +291,105 @@ export class StudentHomeWorkComponent {
     {
       id:3,
       name :'Level 3',
-      data : [
+      level_3 : [
         {
-          name:'Reading numbers till 4',
+          name:'Subtract 4 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
+          name:'Subtract using -10 (1to9)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 9',
+          name:'Subtract using -10, -5, +5',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 99',
+          name:'Add-Subtract using 5, 10',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of lower beads',
+          name:'Subtract 5 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of upper beads',
+          name:'Subtract 6 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of mix beads',
+          name:'Subtract 7 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Small Friends',
+          name:'Subtract 8 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 1 with small friends',
+          name:'Subtract 9 with big friends',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 2 with small friends',
+          name:'Subtract 6 with double combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:' Add 3 with small friends',
+          name:' Subtract 6 with double & single combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 7 with double combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 7 with double & single combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 8 with double combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 8 with double & single combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add using +5',
+          name:'Subtract 9 with double combination',
+          
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Subtract 9 with double & single combination',
           
           completed:false,
           tag:"HW: 2/2 'A'"
@@ -322,99 +399,69 @@ export class StudentHomeWorkComponent {
     {
       id:4,
       name :'Level 4',
-      data : [
+      level_4 : [
         {
-          name:'Reading numbers till 4',
+          name:'Add Subtract 2D Numbers when Sum is of 2D',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
+          name:'Add to 2D numbers (Skip Columns)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 9',
+          name:'Add 2D numbers when sum is of 3D (2R)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 99',
+          name:'Add 3D and 2D numbers (2R)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of lower beads',
+          name:'Subtract from 3D numbers (Skip Columns)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of upper beads',
+          name:'Subtract from 3D numbers (Random)',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of mix beads',
+          name:' Add-Subtract Random 2D Number',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Small Friends',
+          name:'times tables 2-5',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 1 with small friends',
+          name:'times tables 6-9',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 2 with small friends',
+          name:'times tables 2-9',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:' Add 3 with small friends',
-          
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
+          name:' Multiply 2D & 1D',
           
           completed:false,
           tag:"HW: 2/2 'A'"
@@ -424,113 +471,64 @@ export class StudentHomeWorkComponent {
     {
       id:5,
       name :'Level 5',
-      data : [
+      level_5 : [
         {
-          name:'Reading numbers till 4',
+          name:'Add Subtract 3D Numbers when Sum is of 3D',
           
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Reading numbers till 9',
+          name:' Add to 3D numbers (Skip Columns)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 99',
+          name:'Add 3D numbers when sum is of 4D (2R)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of lower beads',
+          name:'Add 4D and 3D numbers (2R)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of upper beads',
+          name:'Subtract from 4D numbers (Skip Columns)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of mix beads',
+          name:'Subtract from 4D numbers (Random)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Small Friends',
+          name:'Add-Subtract Random 3D Number',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 1 with small friends',
+          name:'Multiply 3D & 1D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Add 2 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:' Add 3 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
+          name:'Multiply 2D & 2D',
           
           completePercent:10.00,
           completed:false,
@@ -541,114 +539,57 @@ export class StudentHomeWorkComponent {
     {
       id:6,
       name :'Level 6',
-      data : [
+      level_6 : [
         {
-          name:'Reading numbers till 4',
+          name:'Add Subtract 4D Numbers when Sum is of 4D',
+          completePercent:10.00,
+          completed:false,
+          tag:"HW: 2/2 'A'"
+        },
+        {
+          name:'Add to 4D numbers (Skip Columns)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
+          name:'Add 4D numbers when sum is of 5D (2R)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 9',
+          name:'Subtract from 5D numbers (Skip Columns)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 99',
+          name:'Subtract from 5D numbers (Random)',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of lower beads',
+          name:'Add-Subtract Random 4D Number',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of upper beads',
+          name:'Multiply 4D & 1D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Movement of mix beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Small Friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add 1 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add 2 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:' Add 3 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
+          name:' Multiply 3D & 2D',
           
           completePercent:10.00,
           completed:false,
@@ -659,114 +600,23 @@ export class StudentHomeWorkComponent {
     {
       id:7,
       name :'Level 7',
-      data : [
+      level_7 : [
         {
-          name:'Reading numbers till 4',
+          name:'Divide 2D by 1D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
+          name:'Divide 3D by 1D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 9',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Reading numbers till 99',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Movement of lower beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Movement of upper beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Movement of mix beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Small Friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add 1 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add 2 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:' Add 3 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
+          name:'Divide 4D by 1D',
           
           completePercent:10.00,
           completed:false,
@@ -777,114 +627,30 @@ export class StudentHomeWorkComponent {
     {
       id:8,
       name :'Level 8',
-      data : [
+      level_8 : [
         {
-          name:'Reading numbers till 4',
+          name:'Divide 2D by 2D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 5',
+          name:'Divide 3D by 2D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 9',
+          name:'Divide 4D by 2D',
           
           completePercent:10.00,
           completed:false,
           tag:"HW: 2/2 'A'"
         },
         {
-          name:'Reading numbers till 99',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Movement of lower beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Movement of upper beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Movement of mix beads',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Small Friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add 1 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add 2 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:' Add 3 with small friends',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
-          
-          completePercent:10.00,
-          completed:false,
-          tag:"HW: 2/2 'A'"
-        },
-        {
-          name:'Add using +5',
+          name:'Divide 3D by 3D',
           
           completePercent:10.00,
           completed:false,

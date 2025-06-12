@@ -15,9 +15,8 @@
                       <mat-panel-description>
                         <mat-icon *ngIf="item.completed == false" style="color:red">flag</mat-icon>
                       </mat-panel-description>
-                    </mat-expansion-panel-header>
-                    <div class="row">
-                        @for(i of item.data; track i.id; ){
+                    </mat-expansion-panel-header>                    <div class="row">
+                        @for(i of item['level_' + item.id]; track i.name; ){
                         <div class="col-md-12 col-sm-12 col-lg-12 mb-2">
                             <mat-accordion>
                                 <mat-expansion-panel>
