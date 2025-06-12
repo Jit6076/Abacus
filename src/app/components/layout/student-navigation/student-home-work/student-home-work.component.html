@@ -1,49 +1,52 @@
 <div class="container-fluid" style="padding-top: 10px;">
     <div class="row">
         <div class="col-12">
-        <h1 style="text-align: center;">Homework</h1>
+            <h1 style="text-align: center;">Homework</h1>
         </div>
     </div>
-    
+
     <div class="row">
         @for(item of panelArray; track item.id){
-            <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
-                <mat-accordion class="example-headers-align" multi="false">                    <mat-expansion-panel>
-                        <mat-expansion-panel-header>
-                            <mat-panel-title>{{item.name}}</mat-panel-title>
-                            <mat-panel-description>
-                                <!-- Show red flag only for current level -->
-                                <mat-icon *ngIf="isCurrentLevel(item.id)" style="color:red">flag</mat-icon>
-                            </mat-panel-description>
-                        </mat-expansion-panel-header>
-                        <div class="row">
-                            @for(question of item.questions; track $index; ){
-                                <div class="col-md-12 col-sm-12 col-lg-12 mb-2">
-                                    <mat-accordion>
-                                        <mat-expansion-panel>
-                                            <mat-expansion-panel-header>                                            <mat-panel-title>{{$index + 1}}. {{question}}</mat-panel-title>                                                <mat-panel-description>
-                                                    <mat-chip [style.background-color]="item.completed[$index] ? '#0f8f0f' : 'rgb(190, 190, 190)'">{{item.tags[$index]}}</mat-chip>
-                                                    <!-- Show green tick for completed questions -->
-                                                    <mat-icon *ngIf="item.completed[$index]" style="margin-left:10px; color: #0f8f0f;">mood</mat-icon>
-                                                    <!-- Show red flag only for current question in current level -->
-                                                    <mat-icon *ngIf="isCurrentQuestion(item.id, $index)" style="margin-left:10px; color: red;">flag</mat-icon>
-                                                </mat-panel-description>
-                                            </mat-expansion-panel-header>
-                                            <!-- Add complete button only for current question inside panel content -->
-                                            <div class="text-right mt-3" *ngIf="isCurrentQuestion(item.id, $index)">
-                                                <button mat-raised-button color="primary" (click)="completeQuestion()">
-                                                    <mat-icon>done</mat-icon> Complete Question
-                                                </button>
-                                            </div>
-                                        </mat-expansion-panel>
-                                    </mat-accordion>
-                                </div>
-                            }
+        <div class="col-md-12 col-sm-12 col-lg-12 mb-3">
+            <mat-accordion class="example-headers-align" multi="false"> 
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>{{item.name}}</mat-panel-title>
+                        <mat-panel-description>
+                            <!-- Show red flag only for current level -->
+                            <mat-icon *ngIf="isCurrentLevel(item.id)" style="color:red">flag</mat-icon>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <div class="row">
+                        @for(question of item.questions; track $index; ){
+                        <div class="col-md-12 col-sm-12 col-lg-12 mb-2">
+                            <mat-accordion>
+                                <mat-expansion-panel>
+                                    <mat-expansion-panel-header> <mat-panel-title>{{$index + 1}}.
+                                            {{question}}</mat-panel-title> <mat-panel-description>
+                                            <mat-chip>{{item.tags[$index]}}</mat-chip>
+                                            <!-- Show green tick for completed questions -->
+                                            <mat-icon *ngIf="item.completed[$index]"
+                                                style="margin-left:10px; color: #037003;">mood</mat-icon>
+                                            <!-- Show red flag only for current question in current level -->
+                                            <mat-icon *ngIf="isCurrentQuestion(item.id, $index)"
+                                                style="margin-left:10px; color: red;">flag</mat-icon>
+                                        </mat-panel-description>
+                                    </mat-expansion-panel-header>
+                                    <!-- Add complete button only for current question inside panel content -->
+                                    <div class="text-right mt-3" *ngIf="isCurrentQuestion(item.id, $index)">
+                                        <button mat-raised-button color="primary" (click)="completeQuestion()">
+                                            <mat-icon>done</mat-icon> Complete Question
+                                        </button>
+                                    </div>
+                                </mat-expansion-panel>
+                            </mat-accordion>
                         </div>
-                    </mat-expansion-panel>
-                </mat-accordion>
-            </div>
+                        }
+                    </div>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </div>
         }
     </div>
 </div>
-
